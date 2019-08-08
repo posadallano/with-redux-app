@@ -19,6 +19,7 @@ export const actionTypes = {
 export const reducer = (state = InitialState, action) => {
   const { type, payload } = action;
   const { count } = InitialState;
+  const { clicksCounter } = state;
   console.log(state);
 
   switch (type) {
@@ -33,11 +34,13 @@ export const reducer = (state = InitialState, action) => {
       })
     case actionTypes.INCREMENTCLICKS:
       return Object.assign({}, state, {
-        clicksCounter: state.clicksCounter + 1
+        clicksCounter: clicksCounter + 1
       })
     case actionTypes.RESET:
       return Object.assign({}, state, {
-        count: count
+        count: count,
+        clicksCounter: InitialState.clicksCounter
+        // clicksCounter: clicksCounter
       })
     default:
       return state
