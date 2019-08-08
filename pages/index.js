@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { startClock, serverRenderClock } from '../store'
 import Examples from '../components/examples'
+import Header from '../components/Header';
 
 class Index extends React.Component {
   static getInitialProps ({ reduxStore, req }) {
@@ -23,7 +24,12 @@ class Index extends React.Component {
   }
 
   render () {
-    return <Examples />
+    return (
+      <div>
+        <Header />
+        <Examples />
+      </div>
+    );
   }
 }
 const mapDispatchToProps = { startClock }
