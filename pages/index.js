@@ -3,11 +3,7 @@ import { connect } from 'react-redux'
 import { startClock, serverRenderClock } from '../store'
 import Examples from '../components/examples'
 import Header from '../components/Header';
-import styled from 'styled-components';
-
-const Title = styled.h1`
-  color: red;
-`;
+import TitleParagraph from '../components/TitleParagraph';
 
 class Index extends React.Component {
   static getInitialProps ({ reduxStore, req }) {
@@ -32,7 +28,7 @@ class Index extends React.Component {
     return (
       <div>
         <Header />
-        <Title>My First Next.js Page</Title>
+        <TitleParagraph />
         <Examples />
       </div>
     );
