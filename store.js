@@ -4,13 +4,13 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 const InitialState = {
   lastUpdate: 0,
   light: false,
-  count: 0
+  count: 0,
+  clicksCounter: 0
 }
 
 export const actionTypes = {
   TICK: 'TICK',
   INCREMENT: 'INCREMENT',
-  DECREMENT: 'DECREMENT',
   RESET: 'RESET',
 }
 
@@ -29,10 +29,6 @@ export const reducer = (state = InitialState, action) => {
     case actionTypes.INCREMENT:
       return Object.assign({}, state, {
         count: state.count + payload
-      })
-    case actionTypes.DECREMENT:
-      return Object.assign({}, state, {
-        count: state.count - payload
       })
     case actionTypes.RESET:
       return Object.assign({}, state, {
@@ -55,13 +51,6 @@ export const startClock = () => {
 export const incrementCount = (amount) => {
   return {
     type: actionTypes.INCREMENT,
-    payload: amount
-  }
-}
-
-export const decrementCount = (amount) => {
-  return { 
-    type: actionTypes.DECREMENT,
     payload: amount
   }
 }
