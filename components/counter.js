@@ -4,14 +4,14 @@ import { bindActionCreators } from 'redux'
 import { incrementCount, decrementCount, resetCount } from '../store'
 
 class Counter extends Component {
-  increment = () => {
+  increment = (amount) => {
     const { incrementCount } = this.props
-    incrementCount()
+    incrementCount(amount)
   }
 
-  decrement = () => {
+  decrement = (amount) => {
     const { decrementCount } = this.props
-    decrementCount()
+    decrementCount(amount)
   }
 
   reset = () => {
@@ -26,8 +26,12 @@ class Counter extends Component {
         <h1>
           Count: <span>{count}</span>
         </h1>
-        <button onClick={this.increment}>+1</button>
-        <button onClick={this.decrement}>-1</button>
+        <button onClick={() => this.increment(1)}>+1</button>
+        <button onClick={() => this.increment(5)}>+5</button>
+        <button onClick={() => this.increment(10)}>+10</button>
+        <button onClick={() => this.increment(-1)}>-1</button>
+        <button onClick={() => this.increment(-5)}>-5</button>
+        <button onClick={() => this.increment(-10)}>-10</button>
         <button onClick={this.reset}>Reset</button>
       </div>
     )

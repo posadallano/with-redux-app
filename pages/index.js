@@ -17,7 +17,7 @@ class Index extends React.Component {
   componentDidMount () {
     // DISPATCH ACTIONS HERE FROM `mapDispatchToProps`
     // TO TICK THE CLOCK
-    this.timer = setInterval(() => this.props.startClock(), 1000)
+    // this.timer = setInterval(() => this.props.startClock(), 1000)
   }
 
   componentWillUnmount () {

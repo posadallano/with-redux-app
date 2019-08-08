@@ -8,6 +8,7 @@ const TextContent = styled.div`
   p {
     color: red;
     font-size: 20px;
+    line-height: 18px;
   }
 `;
 
