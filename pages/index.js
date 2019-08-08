@@ -3,6 +3,11 @@ import { connect } from 'react-redux'
 import { startClock, serverRenderClock } from '../store'
 import Examples from '../components/examples'
 import Header from '../components/Header';
+import styled from 'styled-components';
+
+const Title = styled.h1`
+  color: red;
+`;
 
 class Index extends React.Component {
   static getInitialProps ({ reduxStore, req }) {
@@ -27,12 +32,15 @@ class Index extends React.Component {
     return (
       <div>
         <Header />
+        <Title>My First Next.js Page</Title>
         <Examples />
       </div>
     );
   }
 }
+
 const mapDispatchToProps = { startClock }
+
 export default connect(
   null,
   mapDispatchToProps

@@ -8,6 +8,7 @@ class MyApp extends App {
     const { Component, pageProps, reduxStore } = this.props
     return (
       <Container>
+        <title>My Next + Redux page</title>
         <Provider store={reduxStore}>
           <Component {...pageProps} />
         </Provider>
