@@ -11,6 +11,7 @@ const InitialState = {
 export const actionTypes = {
   TICK: 'TICK',
   INCREMENT: 'INCREMENT',
+  INCREMENTCLICKS: 'INCREMENTCLICKS',
   RESET: 'RESET',
 }
 
@@ -29,6 +30,10 @@ export const reducer = (state = InitialState, action) => {
     case actionTypes.INCREMENT:
       return Object.assign({}, state, {
         count: state.count + payload
+      })
+    case actionTypes.INCREMENTCLICKS:
+      return Object.assign({}, state, {
+        clicksCounter: state.clicksCounter + 1
       })
     case actionTypes.RESET:
       return Object.assign({}, state, {
@@ -52,6 +57,12 @@ export const incrementCount = (amount) => {
   return {
     type: actionTypes.INCREMENT,
     payload: amount
+  }
+}
+
+export const incrementClicks = () => {
+  return {
+    type: actionTypes.INCREMENTCLICKS
   }
 }
 
